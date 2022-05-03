@@ -90,9 +90,9 @@ body{
 
   }
 
-  .fas{
+ /* .fas{
     color: black;
-  }
+  }*/
 }
 
 
@@ -541,7 +541,7 @@ p {
     border-radius: 50%;
   }
   .icon2{
-    color: #fff;
+    color: white !important;
     font-size: 30px;
   }
 
