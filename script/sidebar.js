@@ -1,35 +1,22 @@
-		 /* Code for changing current
-		 link on clicking */
-		 var btns =
-		 $("#navigation .navbar-nav .nav-link2");
 
-		 for (var i = 0; i < btns.length; i++) {
-		 	btns[i].addEventListener("click",
-		 		function () {
-		 			var current = document
-		 			.getElementsByClassName("current");
+// new script
 
-		 			current[0].className = current[0]
-		 			.className.replace(" current", "");
+ const sections = document.querySelectorAll("section");
+  const navLi = document.querySelectorAll("nav ul .pcmenu li");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute("id");
+      }
+    });
 
-		 			this.className += " current";
-		 		});
-		 }
-
-      /* Code for changing current
-      link on Scrolling */
-      $(window).scroll(function () {
-      	var distance = $(window).scrollTop();
-      	$('.page-section2').each(function (i) {
-
-      		if ($(this).position().top
-      			<= distance + 250) {
-
-      			$('.navbar-nav a.current')
-      		.removeClass('current');
-
-      		$('.navbar-nav a').eq(i)
-      		.addClass('current');
-      	}
-      });
-      }).scroll();
+    navLi.forEach((li) => {
+      li.classList.remove("active");
+      if (li.classList.contains(current)) {
+        li.classList.add("active");
+      }
+    });
+  });
