@@ -127,6 +127,7 @@ body{
   @media only screen and (max-width: 999px) {
     .navbar-brand {
       color: black;
+    margin-left: 10px;
     }
     span{
       /*color: white;*/
@@ -766,8 +767,15 @@ p {
     }
   }
 
-  @media only screen and (max-width: 999px){}
-.fas {
-    color: black;
-}
-}
+  .mbmenu{
+    display: none!important;
+  }
+  @media only screen and (max-width: 480px){
+    .mbmenu{
+      display: block!important;
+      padding: 0;
+    }
+    .pcmenu{
+      display: none;
+    }
+  }
