@@ -1,7 +1,8 @@
- 
+
 *{
   margin:0px;
   padding: 0px;
+  scroll-behavior: smooth;
 }
 html {
   scroll-behavior: smooth;
@@ -9,17 +10,15 @@ html {
 body{
   font-family: Roboto, sans-serif;
   font-weight: 400;
-  
-
-
+  min-height:100vh;
+  position:relative;
 }
-
 
 .navbar {
   background-color: transparent;
   box-shadow: none;
   overflow: hidden;
-
+  z-index:999;
 }
 .fas{
   color: white;
@@ -43,7 +42,7 @@ body{
 
 .navbar .navbar-nav .nav-item .nav-link span:before{
  content: "";
- position: absolute;
+ position: absolute!important;
  width: 100%;
  height: 2px;
  bottom: 0;
@@ -127,7 +126,7 @@ body{
   @media only screen and (max-width: 999px) {
     .navbar-brand {
       color: black;
-    margin-left: 10px;
+      margin-left: 10px;
     }
     span{
       /*color: white;*/
@@ -574,7 +573,7 @@ p {
     right: 0;
     bottom: 0;
     content: '';
-    background: #3e64ff;
+    /*background: #3e64ff;*/
     opacity: .7;
   }
 
@@ -761,9 +760,9 @@ p {
   @media only screen and (max-width: 768px){
     .res {
       position: sticky!important;
-      top: 69px!important;
+      top: 65px!important;
       background: #fff;
-      z-index: 999;
+      z-index: 1!important;
     }
   }
 
@@ -780,21 +779,21 @@ p {
     }
   }
 
-.res{
-  z-index: 1;
-  padding: 0;
-}
-nav ul .pcmenu li:hover span:before{
- visibility: visible;
- transform: scaleX(1);
-}
+  .res{
+    z-index: 1!important;
+    padding: 0;
+  }
+  nav ul .pcmenu li:hover span:before{
+   visibility: visible;
+   transform: scaleX(1);
+ }
 
-nav ul .pcmenu li.active a span:before{
+ nav ul .pcmenu li.active a span:before{
   visibility: visible;
   transform: scaleX(1);
 }
 
- nav ul .pcmenu li span:before{
+nav ul .pcmenu li span:before{
  content: "";
  position: absolute;
  width: 100%;
@@ -814,3 +813,102 @@ nav ul .pcmenu li.active a span:before{
  -o-transition: all 0.3s ease-in-out 0s;
  transition: all 0.3s ease-in-out 0s;
 }
+
+.nav-pills .sidebar.current span{
+ color: #3e64ff!important;
+ margin-left: 20px;
+ position: relative;
+}
+
+.nav-pills .sidebar.current span::after{
+  position: absolute;
+  top: 50%;
+  left: -24px;
+  width: 20px;
+  height: 2px;
+  content: '';
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background: #3e64ff;
+}
+.close-navbar-toggler{
+  position:absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width:100%;
+  z-index:1;
+  cursor:pointer;
+}
+.close-navbar-toggler.collapsed{
+  z-index:-1;
+}
+
+  .progress-circul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .circular-progress {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+  }
+  .circular-progress:before {
+    content: "";
+    position: absolute;
+    height: 84%;
+    width: 84%;
+    background-color: #ffffff;
+    border-radius: 50%;
+  }
+  .value-container {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
+    color: #231c3d;
+  }
+ .progress-bar-personal {
+    width: calc(100% - 6px);
+    display: flex;
+    height: 1rem;
+    overflow: hidden;
+    line-height: 0;
+    font-size: .75rem;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+  }
+
+  .progress-bar-fill {
+    background-color: #3e64ff;
+    box-shadow: none;
+    font-size: 12px;
+    line-height: 1.2;
+    position: relative;
+    overflow: visible;
+    border-radius: 2px;
+    transition: width 5s ease-in-out;
+  }
+
+
+  .crsr1{
+    cursor: url("../image/curser/1.png"), auto;
+  }
+  .crsr2{
+    cursor: url("../image/curser/2.png"), auto;
+  }  
+  .crsr3{
+    cursor: url("../image/curser/3.png"), auto;
+  }
+  .crsr4{
+    cursor: url("../image/curser/4.png"), auto;
+  }
+  .crsr5{
+    cursor: url("../image/curser/5.png"), auto;
+  }
+
+
